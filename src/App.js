@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ReactJWPlayer from 'react-jw-player';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <div style={{ height: 297, width: 528 }}>
+          <ReactJWPlayer
+            playerId="live-player"
+            file="https://wowzaprod211-i.akamaihd.net/hls/live/859782/f52e9441/playlist.m3u8"
+            playerScript='https://cdn.jwplayer.com/libraries/pUQtdZir.js'
+          />
+        </div>
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;
