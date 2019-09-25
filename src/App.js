@@ -16,12 +16,24 @@ class App extends React.Component {
     };
   }
 
+  changeLikeButton = (id) => {
+    window.jwplayer('live-player').removeButton(id);
+    window.jwplayer('live-player').addButton(
+      "",
+      "You already liked the video",
+      () => {
+        console.log("You already liked the video");
+      },
+      id,
+    );
+  };
+
   setupPlayerOnReady = (event) => {
     window.jwplayer('live-player').addButton(
       "",
       "Like the Video",
       () => {
-        this.setState({ is_liked: true }, () => console.log("video liked"))
+        this.setState({ is_liked: true }, () => this.changeLikeButton("like-video"))
       },
       "like-video"
     );
