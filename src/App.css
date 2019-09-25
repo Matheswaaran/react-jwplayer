@@ -30,3 +30,7 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+.jw-button-image {
+  background-image: url('./assests/like.svg') !important;
+}

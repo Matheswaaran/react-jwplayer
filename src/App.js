@@ -17,7 +17,7 @@ class App extends React.Component {
 
   setupPlayerOnReady = (event) => {
     window.jwplayer('live-player').addButton(
-      "./assests/like.png",
+      "",
       "Like the Video",
       () => {
         console.log("video liked");
