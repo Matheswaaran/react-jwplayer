@@ -20,3 +20,13 @@
 .App-link {
   color: #09d3ac;
 }
+
+
+.jw-svg-icon-play path {
+    display: none;
+}
+.jw-svg-icon-play {
+    background-image: url('./assests/play.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
