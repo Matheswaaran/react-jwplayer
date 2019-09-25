@@ -21,7 +21,6 @@
   color: #09d3ac;
 }
 
-
 .jw-svg-icon-play path {
     display: none;
 }
@@ -31,6 +30,10 @@
     background-repeat: no-repeat;
 }
 
-.jw-button-image {
+.not-liked-video .jw-button-image {
+  background-image: url('./assests/nolike.svg') !important;
+}
+
+.liked-video .jw-button-image {
   background-image: url('./assests/like.svg') !important;
 }

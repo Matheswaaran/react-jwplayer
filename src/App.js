@@ -6,6 +6,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      is_liked: false,
       playList: [
         {
           file: "https://content.jwplatform.com/manifests/yp34SRmf.m3u8",
@@ -20,7 +21,7 @@ class App extends React.Component {
       "",
       "Like the Video",
       () => {
-        console.log("video liked");
+        this.setState({ is_liked: true }, () => console.log("video liked"))
       },
       "like-video"
     );
@@ -29,13 +30,15 @@ class App extends React.Component {
   render() {
     return (
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
-        <div style={{ height: 720, width: 1280 }}>
-          <ReactJWPlayer
-            playerId="live-player"
-            onReady={this.setupPlayerOnReady}
-            playlist={this.state.playList}
-            playerScript="https://cdn.jwplayer.com/libraries/pUQtdZir.js"
-          />
+        <div className="bg_heart">
+          <div className={this.state.is_liked ? "liked-video" : "not-liked-video"} style={{ height: 720, width: 1280 }}>
+            <ReactJWPlayer
+              playerId="live-player"
+              onReady={this.setupPlayerOnReady}
+              playlist={this.state.playList}
+              playerScript="https://cdn.jwplayer.com/libraries/pUQtdZir.js"
+            />
+          </div>
         </div>
       </div>
     );
