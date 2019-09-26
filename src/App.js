@@ -34,12 +34,12 @@ class App extends React.Component {
 
       bg_heart.appendChild(heart1);
       bg_heart.appendChild(heart2);
-      
-    }, 10);
+
+    }, 200);
 
     setTimeout(() => {
       clearInterval(love);
-    }, 1000);
+    }, 2000);
   };
 
   changeLikeButton = (id) => {
